@@ -46,8 +46,13 @@ todoForm.addEventListener("submit", todoFormHandle);
 
 const savedTodo = localStorage.getItem(TODO_DATA);
 
-if ( saveTodos !== null) {
+if (savedTodo) {
     const parseTodos = JSON.parse(savedTodo);
     toDos = parseTodos;
     parseTodos.forEach(painTodo);
-} 
+} else {
+    
+}
+
+
+console.log(saveTodos);
