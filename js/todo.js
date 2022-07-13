@@ -4,21 +4,25 @@ const todoList = document.querySelector("#todo-list");
 
 let toDos = [];
 
+const TODO_DATA = "todoDate";
 
 function saveTodos(){
-    localStorage.setItem("todoDate",JSON.stringify(toDos));
+    localStorage.setItem(TODO_DATA,JSON.stringify(toDos));
 }
 
 function delHandler(event){
     const li = event.target.parentElement;
     li.remove();
+    toDos = toDos.filter((toDo) => toDo.id !== parseInt(li.id));
+    saveTodos();
 }
 
 function painTodo(newTodo){
     const li = document.createElement('li');
+    li.id = newTodo.id;
     const span = document.createElement('span');
     const button = document.createElement('button');
-    span.innerText = newTodo;
+    span.innerText = newTodo.text;
     button.innerText = "❤";
     button.addEventListener("click",delHandler)
     todoList.appendChild(li);
@@ -29,17 +33,21 @@ function todoFormHandle(event) {
     event.preventDefault();
     const newTodo = todoInput.value;
     todoInput.value ="";
-    toDos.push(newTodo);
-    painTodo(newTodo);
+    const newTodoObj = {
+        text : newTodo,
+        id : Date.now(),
+    }
+    toDos.push(newTodoObj);
+    painTodo(newTodoObj);
     saveTodos();
 }
 
 todoForm.addEventListener("submit", todoFormHandle);
 
-const savedTodo = localStorage.getItem("todoDate");
+const savedTodo = localStorage.getItem(TODO_DATA);
 
 if ( saveTodos !== null) {
     const parseTodos = JSON.parse(savedTodo);
     toDos = parseTodos;
     parseTodos.forEach(painTodo);
-}
+} 
