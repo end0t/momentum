@@ -1,64 +1,59 @@
 <!DOCTYPE html>
 <html lang="ko">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>first momentum</title>
+
+    <link rel="stylesheet" href="css/jquery.fullPage.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reset-css@5.0.1/reset.css">
     <link rel="stylesheet" href="css/style.css">
     
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script src="js/jquery.fullPage.js"></script>
+    <script src="js/full.js" defer></script>
+    <script src="js/greeting.js" defer></script>
+    <script src="js/clock.js" defer></script>
+    <script src="js/quotes.js" defer></script>
+    <script src="js/background.js" defer></script>
+    <script src="js/todo.js" defer></script>
+    <script src="js/weather.js" defer></script>
 </head>
-<body>
-    
 
-    <ul>
-        <li>
-            <ul>
-                <li></li>
-                <li></li>
+<body>
+    <div id="fullpage">
+        <div class="section">
+
+            <h1 id="greeting" class="hidden"></h1>
+
+            <form class="login-form hidden">
+                <input type="text" placeholder="what is your name? Can I get your name?" required maxlength="15">
+                <button>Log In</button>
+            </form>
+
+            <h2 id="clock"></h2>
+
+            <ul id="quotes">
                 <li></li>
                 <li></li>
             </ul>
-        </li>
-        <li></li>
-        <li></li>
-        <li></li>
-    </ul>
 
+            <form action="" id="todo-form">
+                <input type="text" placeholder="입력해주세요">
+                <button></button>
+            </form>
 
-    <h1 id="greeting" class="hidden"></h1>
+            <ul id="todo-list">
+            </ul>
 
-    <form class="login-form hidden">
-        <input type="text" placeholder="what is your name? Can I get your name?" required maxlength="15">
-        <button>Log In</button>
-    </form>
-
-    <h2 id="clock"></h2>
-
-    <ul id="quotes">
-        <li></li>
-        <li></li>
-    </ul>
-
-    <form action="" id="todo-form">
-        <input type="text" placeholder="입력해주세요">
-        <button></button>
-    </form>
-
-    <ul id="todo-list">
-    </ul>
-
-    <div id="weather">
-        <span></span>
-        <span></span>
+            <div id="weather">
+                <span></span>
+                <span></span>
+            </div>
+        </div>
     </div>
-
-    <script src="js/greeting.js"></script>
-    <script src="js/clock.js"></script>
-    <script src="js/quotes.js"></script>
-    <script src="js/background.js"></script>
-    <script src="js/todo.js"></script>
-    <script src="js/weather.js"></script>
 </body>
+
 </html>

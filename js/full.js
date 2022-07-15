@@ -1,51 +1,20 @@
-<!DOCTYPE html>
-<html lang="ko">
+$(document).ready(function () {
+    $('#fullpage').fullpage({
+        //options here
+        autoScrolling: true,
+        scrollHorizontally: true,
+        // lockAnchors:true,
+        navigation: true,
+        navigationPosition: 'right',
+        navigationTooltips: ['firstSlide', 'secondSlide', 'ㅋㅋㅋㅋ', 'gggg'],
+        slidesNavigation: true,
+        slidesNavPosition: 'bottom',
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>full_page</title>
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="css/jquery.fullPage.css">
-    <script src="js/jquery.fullPage.js"></script>
-
-</head>
-
-<style>
-    .box1 { background-color: #4285f4;}
-    .box2 { background-color: #ed5b4e;}
-    .box3 { background-color: #fbbc05;}
-    .box4 { background-color: #34a853;}
-</style>
-<body>
-
-    <div id="fullpage">
-        <div class="section box1">Some section1</div>
-        <div class="section box2">Some section2</div>
-        <div class="section box3">Some section3</div>
-        <div class="section box4">Some section4</div>
-    </div>
-
-    <script>
-        $(document).ready(function () {
-            $('#fullpage').fullpage({
-                //options here
-                autoScrolling: true,
-                scrollHorizontally: true,
-                // lockAnchors:true,
-                navigation: true,
-                navigationPosition: 'right',
-                navigationTooltips:['firstSlide', 'secondSlide','ㅋㅋㅋㅋ','gggg'],
-                slidesNavigation:true,
-                slidesNavPosition:'bottom',
-
-                // scrollBar: true,
-                easingcss3: 'ease',
-            });
-        });
-
-    //     new fullpage('#fullpage', {
+        // scrollBar: true,
+        easingcss3: 'ease',
+    });
+});
+//     new fullpage('#fullpage', {
 	// 	//이동
 	// 	menu: '#menu',
 	// 	lockAnchors: false,
@@ -119,7 +88,3 @@
 	// afterResponsive: function(isResponsive){},
 	// afterSlideLoad: function(section, origin, destination, direction){},
 	// onSlideLeave: function(section, origin, destination, direction){}
-    </script>
-</body>
-
-</html>

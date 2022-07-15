@@ -11,4 +11,4 @@ const bgImg = document.createElement('img');
 // 이미지태그 src 수정
 bgImg.src = `img/${bgRandom}.jpg`
 
-document.body.appendChild(bgImg);
+document.querySelector('.section').appendChild(bgImg);
